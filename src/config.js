@@ -1,6 +1,7 @@
-// Google Maps API anahtarınızı buraya ekleyin
-// https://console.cloud.google.com/apis/credentials adresinden alabilirsiniz
-export const GOOGLE_MAPS_API_KEY = 'AIzaSyA9no7aKldHcM6lquJaqrh-WaUldU8LXTs';
+import Constants from 'expo-constants';
+
+// Google Maps API anahtarı .env dosyasından alınır
+export const GOOGLE_MAPS_API_KEY = Constants.expoConfig?.extra?.GOOGLE_MAPS_API_KEY;
 
 // Kategoriler ve Türkçe isimleri
 export const CATEGORIES = [

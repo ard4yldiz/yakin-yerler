@@ -1,164 +1,155 @@
-# Yakınımdaki Yerler 📍
+# Nearby Places App 📍
 
-Konumunuzun çevresindeki eczane, otel, restoran ve daha fazla yeri bulmanızı sağlayan React Native mobil uygulaması.
+A React Native app that helps you find nearby places like restaurants, hospitals, gas stations, and more using Google Maps API.
 
-## Özellikler ✨
+## Features ✨
 
-- 📍 Kullanıcı konumunu otomatik algılama
-- 🔍 10 farklı kategoride yer arama (Eczane, Hastane, Restoran, Kafe, Otel, vb.)
-- 📏 Özelleştirilebilir arama mesafesi (500m - 10km)
-- 📋 Liste görünümünde detaylı bilgiler
-- 🗺️ Harita üzerinde görselleştirme
-- ⭐ Puan ve açık/kapalı durumu gösterimi
-- 🔄 Anlık yenileme özelliği
+- 📍 Automatic user location detection
+- 🔍 Search in 10 different categories (Pharmacy, Hospital, Restaurant, Cafe, Hotel, etc.)
+- 📏 Customizable search distance (500m - 10km)
+- 📋 Detailed information in list view
+- 🗺️ Interactive map visualization
+- ⭐ Rating and open/closed status display
+- 🔄 Real-time refresh functionality
 
-## Teknolojiler 🛠️
+## Tech Stack 🛠️
 
-- **React Native** - Mobil uygulama geliştirme
+- **React Native** - Mobile app development
 - **Expo** - React Native toolchain
-- **Google Places API** - Yer verilerini çekme
-- **Google Maps** - Harita görselleştirme
-- **Expo Location** - Konum servisleri
-- **React Navigation** - Ekranlar arası geçiş
+- **Google Places API** - Location data
+- **Google Maps** - Map visualization
+- **Expo Location** - Location services
+- **React Navigation** - Screen navigation
 
-## Kurulum 🚀
+## Setup 🚀
 
-### Gereksinimler
+### Requirements
 
-- Node.js (v16 veya üzeri)
-- npm veya yarn
-- Expo Go uygulaması (mobil cihazınızda test için)
-- Google Maps API Anahtarı
+- Node.js (v16 or higher)
+- npm or yarn
+- Expo Go app (for mobile testing)
+- Google Maps API Key
 
-### Adımlar
+### Installation
 
-1. **Projeyi klonlayın veya indirin**
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/gokhanaydinli/google-maps.git
+   cd google-maps
+   ```
 
-2. **Bağımlılıkları yükleyin**
+2. **Install dependencies**
    ```bash
    npm install
    ```
 
-3. **Google Maps API Anahtarı Alın**
+3. **Get Google Maps API Key**
 
-   - [Google Cloud Console](https://console.cloud.google.com/) adresine gidin
-   - Yeni bir proje oluşturun
-   - "APIs & Services" > "Credentials" bölümüne gidin
-   - "Create Credentials" > "API Key" seçin
-   - Şu API'leri aktif edin:
+   - Go to [Google Cloud Console](https://console.cloud.google.com/)
+   - Create a new project
+   - Navigate to "APIs & Services" > "Credentials"
+   - Select "Create Credentials" > "API Key"
+   - Enable these APIs:
      - Maps SDK for Android
      - Maps SDK for iOS
      - Places API
      - Maps JavaScript API
 
-4. **API Anahtarını Yapılandırın**
+4. **Configure API Key**
 
-   `src/config.js` dosyasındaki `GOOGLE_MAPS_API_KEY` değerini kendi API anahtarınızla değiştirin:
+   - Copy `.env.example` to `.env`
+   - Add your API key to `.env`:
+     ```
+     GOOGLE_MAPS_API_KEY=your_api_key_here
+     ```
 
-   ```javascript
-   export const GOOGLE_MAPS_API_KEY = 'BURAYA_API_ANAHTARINIZI_EKLEYIN';
-   ```
-
-   Ayrıca `app.json` dosyasındaki ilgili yerlere de API anahtarınızı ekleyin.
-
-5. **Uygulamayı Başlatın**
+5. **Start the app**
    ```bash
-   npx expo start
+   npm start
    ```
 
-6. **Mobil Cihazda Test Edin**
+6. **Test on mobile device**
 
-   - Android: Expo Go uygulamasını açın ve QR kodu tarayın
-   - iOS: Kamera uygulamasıyla QR kodu tarayın ve Expo Go'da açın
-   - Web: Tarayıcınızda `w` tuşuna basın
+   - Android: Open Expo Go app and scan QR code
+   - iOS: Scan QR code with camera and open in Expo Go
+   - Web: Press `w` in terminal
 
-## Kullanım 📱
+## Usage 📱
 
-1. **Ayarlar Ekranı**: Aramak istediğiniz kategoriyi ve mesafeyi seçin
-2. **Liste Ekranı**: Yakındaki yerleri mesafeye göre sıralı liste halinde görün
-3. **Harita Ekranı**: Yerleri harita üzerinde görselleştirin
+1. **Settings Screen**: Select the category and distance you want to search
+2. **List Screen**: View nearby places sorted by distance
+3. **Map Screen**: Visualize places on an interactive map
 
-## Proje Yapısı 📁
+## Categories 📂
 
-```
-yakinYerler/
-├── src/
-│   ├── screens/          # Ekran komponentleri
-│   │   ├── HomeScreen.js      # Liste görünümü
-│   │   ├── MapScreen.js       # Harita görünümü
-│   │   └── SettingsScreen.js  # Ayarlar
-│   ├── services/         # Servis katmanı
-│   │   ├── googlePlaces.js    # Google Places API
-│   │   └── location.js        # Konum servisleri
-│   ├── contexts/         # React Context
-│   │   └── SettingsContext.js # Ayarlar state yönetimi
-│   └── config.js         # Yapılandırma dosyası
-├── App.js               # Ana uygulama dosyası
-├── app.json            # Expo yapılandırması
-└── package.json        # Bağımlılıklar
-```
+The app supports these categories:
 
-## Kategoriler 📂
-
-Uygulama şu kategorileri desteklemektedir:
-
-- 💊 Eczane
-- 🏥 Hastane
-- 🍽️ Restoran
-- ☕ Kafe
-- 🏨 Otel
-- ⛽ Benzin İstasyonu
+- 💊 Pharmacy
+- 🏥 Hospital
+- 🍽️ Restaurant
+- ☕ Cafe
+- 🏨 Hotel
+- ⛽ Gas Station
 - 🏧 ATM
-- 🏦 Banka
-- 🛒 Market
-- 🅿️ Otopark
+- 🏦 Bank
+- 🛒 Supermarket
+- 🅿️ Parking
 
-## Build (Derleme) 🏗️
+## Project Structure 📁
 
-### Android APK Oluşturma
+```
+maps/
+├── src/
+│   ├── screens/          # Screen components
+│   │   ├── HomeScreen.js      # List view
+│   │   ├── MapScreen.js       # Map view
+│   │   └── SettingsScreen.js  # Settings
+│   ├── services/         # Service layer
+│   │   ├── googlePlaces.js    # Google Places API
+│   │   └── location.js        # Location services
+│   ├── contexts/         # React Context
+│   │   └── SettingsContext.js # Settings state management
+│   └── config.js         # Configuration file
+├── App.js               # Main app file
+├── app.config.js        # Expo configuration
+└── package.json        # Dependencies
+```
+
+## Build 🏗️
+
+### Android APK
 
 ```bash
 npx eas build --platform android --profile preview
 ```
 
-### iOS IPA Oluşturma
+### iOS IPA
 
 ```bash
 npx eas build --platform ios --profile preview
 ```
 
-Not: EAS Build için [Expo hesabı](https://expo.dev/) oluşturmanız gerekir.
+Note: You need an [Expo account](https://expo.dev/) for EAS Build.
 
-## Sorun Giderme 🔧
+## Troubleshooting 🔧
 
-### Konum izni alınamıyor
-- Cihazınızın konum servislerini açtığınızdan emin olun
-- Uygulamaya konum izni verdiğinizden emin olun
+### Location permission issues
+- Make sure location services are enabled on your device
+- Grant location permission to the app
 
-### API hatası alıyorum
-- API anahtarınızın doğru olduğundan emin olun
-- Gerekli API'lerin aktif olduğunu kontrol edin
-- API kotanızı aşmadığınızı kontrol edin
+### API errors
+- Verify your API key is correct
+- Check that required APIs are enabled
+- Monitor your API usage quota
 
-### Harita görünmüyor
-- Google Maps API anahtarının app.json'da doğru yapılandırıldığından emin olun
-- Maps SDK'larının aktif olduğunu kontrol edin
+### Map not showing
+- Ensure Google Maps API key is correctly configured
+- Check that Maps SDKs are enabled
 
-## Geliştirme İpuçları 💡
+## Contributing 🤝
 
-- API anahtarınızı production'da `.env` dosyasında saklayın
-- API isteklerini sınırlamak için debounce kullanın
-- Offline durumları için hata yönetimi ekleyin
-- Test için mock data kullanın (API kotası için)
+Contributions and suggestions are welcome!
 
-## Lisans 📄
+## License 📄
 
-Bu proje eğitim amaçlı geliştirilmiştir.
-
-## Katkıda Bulunma 🤝
-
-Önerileriniz ve katkılarınız için teşekkürler!
-
----
-
-**Not**: Google Maps API kullanımı için ücret alınabilir. Ücretsiz kotayı aşmamak için API kullanımınızı takip edin.
+MIT License

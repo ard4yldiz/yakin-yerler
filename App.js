@@ -67,7 +67,8 @@ export default function App() {
               }}
             />
             <Tab.Screen
-              name="Ayarlar"
+              name="
+"
               component={SettingsScreen}
               options={{
                 tabBarIcon: ({ focused }) => <TabIcon icon="⚙️" focused={focused} />,
