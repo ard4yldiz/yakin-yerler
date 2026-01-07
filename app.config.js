@@ -1,9 +1,10 @@
 require('dotenv/config');
 
-export default {
+module.exports = {
   expo: {
     name: "Yakınımdaki Yerler",
     slug: "yakinYerler",
+    owner: "ardayildiz",
     version: "1.0.0",
     orientation: "portrait",
     icon: "./assets/icon.png",
@@ -54,7 +55,10 @@ export default {
       favicon: "./assets/favicon.png"
     },
     extra: {
-      GOOGLE_MAPS_API_KEY: process.env.GOOGLE_MAPS_API_KEY
+      GOOGLE_MAPS_API_KEY: process.env.GOOGLE_MAPS_API_KEY,
+      eas: {
+        projectId: "396e54e8-d2be-4fda-b79c-e15dde3ecc95"
+      }
     }
   }
 };

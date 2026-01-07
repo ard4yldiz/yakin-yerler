@@ -34,7 +34,7 @@ export default function SettingsScreen() {
 
           <View style={styles.infoRow}>
             <Text style={styles.infoLabel}>Geliştirici</Text>
-            <Text style={styles.infoValue}>Claude AI</Text>
+            <Text style={styles.infoValue}>Arda Arkın Yıldız</Text>
           </View>
         </View>
       </View>
